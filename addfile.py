@@ -16,7 +16,7 @@ os.chdir('files') # cambio la directory di lavoro
 filepath = os.path.abspath(file) # assegno il percorso di file a filepath
 
 if not os.path.exists(filepath):
-    sys.exit('The file does not exist or is in another path!!') # in caso venga inserito come argomento un file che non esiste o che non si trova in files
+    sys.exit('The file does not exist or is in another path!!') # stampo messaggio di errore se inserito come argomento un file che non esiste o che non si trova nella cartella
 
 # creo lista formato immagini
 images_fmt = ['png', 'jpg', 'jpeg']
@@ -44,7 +44,7 @@ if ext in images_fmt: # seleziono le immagini
     file_type = 'image' # assegno a file_type il tipo di file
     shutil.move(filepath, 'images') # sposto l'immagine in images
 
-# utilizzo lo stesso procedimento qualora il file fosse audio o di testo
+# utilizzo lo stesso procedimento con file audio o di testo
 elif ext == 'mp3':
     file_type = 'audio'
     shutil.move(filepath, 'audio')
